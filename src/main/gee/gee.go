@@ -99,7 +99,7 @@ func (group *RouterGroup) Static(relativePath string, root string) {
 	group.GET(urlPattern, handler)
 }
 
-// ServerHTTP是net.http库中的路由处理器
+// ServerHTTP是net.http库中的统一控制入口
 func (engine *Engine) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	var middlewares []HandlerFunc
 	for _, group := range engine.groups {
